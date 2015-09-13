@@ -1,0 +1,9 @@
+<div class="card">
+    <h1>{{showController.note.title}}</h1>
+    <p>Created By: {{showController.note.user || showController.note.user.name}}</p>
+    <img ng-src="{{gravatarUrl('itsgeniusstar@gmail.com')}}" /> 
+    <h3>Description</h3>
+    <p>{{showController.note.description}}</p>
+    <h3>Content</h3>
+    <p>{{showController.note.content}}</p>
+</div>

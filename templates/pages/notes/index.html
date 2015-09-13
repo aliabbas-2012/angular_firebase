@@ -1,0 +1,41 @@
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Notes</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Icon</th>
+                            <th>Description</th>
+                            <th colspan="3">Actions</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="note in notes| limitTo:20 |filter: {category:{name:activeCategory}} |filter: search ">
+                            <td>{{note.title}}</td>
+                            <td> <i class="fa fa-{{note.icon}}"></i></td>
+                            <td>{{note.description}}</td>
+                            <td>
+                        <nw-card image="gravatarUrl('itsgeniusstar@gmail.com')"  icon="{{note.icon}}" title="{{note.title}}" description="note.description" id="note.id" ></nw-card>
+                    </td>
+                    <td>
+                        <nw-card-edit  title="{{note.title}}"  id="note.id" $id="note.$id"></nw-card-edit>
+                    </td>
+                    <td>
+                    <nw-card-show image="gravatarUrl('itsgeniusstar@gmail.com')"  icon="{{note.icon}}" title="{{note.title}}" description="note.description" id="note.id"></nw-card-show>
+                    </td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
